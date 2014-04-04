@@ -1,4 +1,4 @@
-/* jquery.dropotron.js v1.4.1 | (c) n33 | n33.co | MIT licensed */
+/* jquery.dropotron.js v1.4.2 | (c) n33 | n33.co | MIT licensed */
 
 (function($) {
 
@@ -386,7 +386,7 @@
 										e.preventDefault();
 										e.stopPropagation();
 										menu.trigger('doToggle');
-								
+										
 								});
 
 						// If expandMode is "hover", set up the event
@@ -418,13 +418,7 @@
 								if (isLocked)
 									return;
 							
-							// Collapse everything
-								_top.trigger('doCollapseAll');
-
-							// Stop propagating
-								e.stopPropagation();
-
-							// No href? Prevent default as well.
+							// No href? Prevent default.
 								if ($(this).attr('href').length < 1)
 									e.preventDefault();
 
