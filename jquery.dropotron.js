@@ -1,4 +1,4 @@
-/* jquery.dropotron.js v1.4.2 | (c) n33 | n33.co | MIT licensed */
+/* jquery.dropotron.js v1.4.3-dev | (c) n33 | n33.co | MIT licensed */
 
 (function($) {
 
