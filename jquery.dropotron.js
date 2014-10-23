@@ -8,6 +8,9 @@
 	// Dropotron prototype method.
 		$.fn.dropotron = function(options) {
 
+			if (this.length == 0)
+				return $(this);
+
 			if (this.length > 1)
 				for (var i=0; i < this.length; i++)
 					$(this[i]).dropotron(options);
