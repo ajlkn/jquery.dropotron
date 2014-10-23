@@ -430,12 +430,14 @@
 						.css('white-space', 'nowrap')
 						.each(function() {
 
-							var t = $(this), a = t.children('a'), ul = t.children('ul');
+							var t = $(this), a = t.children('a'), ul = t.children('ul'),
+								href = a.attr('href');
 							
-							// If the link's href is blank (""), prevent it from doing anything
+							// If href is blank ("") or a hash (#), prevent the link from doing anything.
 								a.on('click touchend', function(e) {
-
-									if ($(this).attr('href').length < 1)
+									
+									if (href.length == 0
+									||	href == '#')
 										e.preventDefault();
 									else
 										e.stopPropagation();
