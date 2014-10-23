@@ -50,6 +50,7 @@
 				var	_top = settings.selectorParent,
 					_menus = _top.find('ul'),
 					_body = $('body'),
+					_bodyhtml = $('body,html'),
 					_window = $(window);
 				
 				var	isLocked = false,
@@ -376,7 +377,7 @@
 								.disableSelection_dropotron()
 								.addClass('opener')
 								.css('cursor', 'pointer')
-								.on('click', function(e) {
+								.on('click touchend', function(e) {
 								
 									// Locked? Bail.
 										if (isLocked)
@@ -412,7 +413,7 @@
 				// All links
 					_menus.find('a')
 						.css('display', 'block')
-						.on('click', function(e) {
+						.on('click touchend', function(e) {
 
 							// Locked? Bail.
 								if (isLocked)
@@ -432,7 +433,7 @@
 							var t = $(this), a = t.children('a'), ul = t.children('ul');
 							
 							// If the link's href is blank (""), prevent it from doing anything
-								a.on('click', function(e) {
+								a.on('click touchend', function(e) {
 
 									if ($(this).attr('href').length < 1)
 										e.preventDefault();
@@ -443,7 +444,7 @@
 							
 							// If there is a link but no unordered list ...
 								if (a.length > 0 && ul.length == 0)
-									t.on('click', function(e) {
+									t.on('click touchend', function(e) {
 
 										if (isLocked)
 											return;
@@ -521,8 +522,8 @@
 						});
 				
 				// Body
-					_body
-						.on('click', function() {
+					_bodyhtml
+						.on('click touchend', function() {
 
 							if (!isLocked)
 								_top.trigger('doCollapseAll');
