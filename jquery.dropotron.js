@@ -467,7 +467,7 @@
 									return;
 							
 							// No href? Prevent default.
-								if ($(this).attr('href').length < 1)
+								if ( $(this).attr('href') == undefined || $(this).attr('href').length < 1)
 									e.preventDefault();
 
 						});
@@ -483,8 +483,9 @@
 							// If href is blank ("") or a hash (#), prevent the link from doing anything.
 								$a.on('click touchend', function(e) {
 									
-									if (href.length == 0
-									||	href == '#')
+                                    if (!href 
+                                    || href.length == 0
+                                    ||  href == '#')
 										e.preventDefault();
 									else
 										e.stopPropagation();
