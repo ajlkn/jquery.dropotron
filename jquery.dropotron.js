@@ -322,7 +322,7 @@
 											
 											case 'zoom':
 
-												isLocked = true;
+												isLocked = $menu;
 
 												$opener.addClass(settings.openerActiveClass);
 												$menu.animate({
@@ -336,7 +336,7 @@
 										
 											case 'slide':
 
-												isLocked = true;
+												isLocked = $menu;
 
 												$opener.addClass(settings.openerActiveClass);
 												$menu.animate({ height: 'toggle' }, settings.speed, settings.easing, function() {
@@ -347,7 +347,7 @@
 										
 											case 'fade':
 
-												isLocked = true;
+												isLocked = $menu;
 												
 												if (isTL && !settings.noOpenerFade) {
 													
@@ -427,7 +427,7 @@
 								.on('click touchend', function(e) {
 								
 									// Locked? Bail.
-										if (isLocked)
+										if (isLocked == $menu)
 											return;
 									
 									// Toggle menu.
@@ -441,7 +441,7 @@
 							if (settings.expandMode == 'hover')
 								$opener.hover(function(e) {
 
-									if (isLocked)	
+									if (isLocked == $menu)
 										return;
 
 									hoverTimeoutId = window.setTimeout(function() {
@@ -462,12 +462,13 @@
 						.css('display', 'block')
 						.on('click touchend', function(e) {
 
+                            var $this = $(this);
 							// Locked? Bail.
-								if (isLocked)
+								if (isLocked == $this)
 									return;
 							
 							// No href? Prevent default.
-								if ($(this).attr('href').length < 1)
+								if ($this.attr('href').length < 1)
 									e.preventDefault();
 
 						});
@@ -495,7 +496,7 @@
 								if ($a.length > 0 && $ul.length == 0)
 									$this.on('click touchend', function(e) {
 
-										if (isLocked)
+										if (isLocked == $this)
 											return;
 											
 										$top.trigger('doCollapseAll');
