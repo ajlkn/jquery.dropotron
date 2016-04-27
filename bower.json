@@ -1,0 +1,18 @@
+{
+  "name": "jquery.dropotron",
+  "main": "jquery.dropotron.js",
+  "homepage": "https://github.com/n33/jquery.dropotron",
+  "authors": [
+    "aj <aj@n33.co>"
+  ],
+  "description": "Multilevel dropdown menus for jQuery",
+  "keywords": [
+    "jquery",
+    "dropdown"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.7.0"
+  },
+  "license": "MIT",
+  "main": "jquery.dropotron.js"
+}
