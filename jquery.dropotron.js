@@ -96,6 +96,7 @@
 					$body = $('body'),
 					$bodyhtml = $('body,html'),
 					$window = $(window);
+					$document = $(document);
 
 				var	isLocked = false,
 					hoverTimeoutId = null,
@@ -205,7 +206,7 @@
 															c = 'left';
 
 														}
-														else if (left + mw > $window.width()) {
+														else if (left + mw > $document.width()) {
 
 															left = x.left - mw + ow;
 															c = 'right';
@@ -218,7 +219,7 @@
 													default:
 														left = x.left;
 
-														if (left + mw > $window.width()) {
+														if (left + mw > $document.width()) {
 
 															left = x.left - mw + ow;
 															c = 'right';
@@ -302,7 +303,7 @@
 											tmp = true;
 
 										}
-										else if ($menu.offset().left + mw > $window.width()) {
+										else if ($menu.offset().left + mw > $document.width()) {
 
 											left += (-1 * $opener.parent().outerWidth()) - settings.offsetX;
 											tmp = true;
